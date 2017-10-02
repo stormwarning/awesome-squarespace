@@ -1,0 +1,54 @@
+{
+  "name": "awesome-squarespace",
+  "version": "1.0.0",
+  "description": "A curated list of resources for Squarespace development.",
+  "author": "Jeff Nelson <rustyangel@gmail.com> (http://tidaltheory.co/)",
+  "config": {
+    "commitizen": {
+      "path": "emoji-cz",
+      "emoji-cz": {
+        "types": {
+          "Content": {
+            "emoji": "✏️",
+            "name": "Content",
+            "description": "Content edits or additions."
+          },
+          "Dependency": {
+            "emoji": "📦",
+            "name": "Dependency",
+            "description": "Adding or up/downgrading project dependencies."
+          },
+          "First": {
+            "emoji": "🎉",
+            "name": "Init",
+            "description": "Initial commit."
+          }
+        },
+        "format": "[emoji] [subject]"
+      }
+    }
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "emoji-cz": "^0.3.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "remark-cli": "^4.0.0",
+    "remark-preset-github": "0.0.7"
+  },
+  "keywords": ["squarespace", "awesome", "awesome-list"],
+  "license": "CC0-1.0",
+  "lint-staged": {
+    "*.md": ["remark . -qfo", "git add"]
+  },
+  "remarkConfig": {
+    "plugins": ["preset-github"]
+  },
+  "repository": "https://github.com/stormwarning/awesome-squarespace",
+  "scripts": {
+    "cz": "git-cz",
+    "lint": "remark . -qfo",
+    "precommit": "lint-staged && npm test",
+    "test": "npm run lint"
+  }
+}
